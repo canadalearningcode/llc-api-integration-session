@@ -112,7 +112,7 @@
           * static elements (e.g. navigation and header) could be separated into their own frames
           * isn&#39;t reloaded when the user browsed to new content in another frame.
 
-          However, using `frames` has many drawbacks and have since become obsolete.
+          However, using `frames` have many drawbacks and have since become obsolete.
 
           These days, `iframes` (derived from frames) can used for embedding content from one HTML document inside another which is useful for adding content to your site from other sites like YouTube and Instragram.
 
@@ -130,7 +130,7 @@
         Some services will also give you some customizing options in a visual interface. 
 
         Much of the generated embed code provided by these services is just HTML!  
-        So sometimes you can just edit or delete some of the generated coded to makde your own basic changes as well.  
+        Sometimes, you can edit or delete some of the generated coded to make basic changes as well.  
 
         To manipulate the raw data, most APIs will provide further documentation for how to access the data and will usually require JavaSript, PHP or other programming languages.
 
@@ -190,10 +190,20 @@
       <script type="text/template">
           ##Vimeo customizations
 
-          Vimeo has options within their interface from some customizations.  
+          Vimeo has options within their interface for some customizations.  
 
           ![](framework/img/workshop/vimeo-options1.jpg)
           ![](framework/img/workshop/vimeo-options2.jpg)
+
+          Let&#39;s look at the code and see if we can tweak any of the values ourselves.  For example, when you change the colour, an additional *parameter* is added to the end of the video url, `?color=hexcode`.
+          
+          ```     
+           <iframe src="https://player.vimeo.com/video/116499962?color=c9ff23" width="600" height="338" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          ```
+          
+          Let&#39;s say you want to use your company&#39;s brand colour.  Instead of looking for it in the Vimeo interface, you can just replace the hex value after the `=` symbol.  Here&#39;s the video again with an updated hex code.  Now the text, hovers, play button and controls bar uses the LLC brand colour!
+
+           <iframe src="https://player.vimeo.com/video/116499962?&color=b109aa" width="600" height="338" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><p></p>
       </script>
     </section>
 
@@ -201,12 +211,12 @@
       <script type="text/template">
           ##Google Maps
           
-          Go to http://google.ca, add an address and select **Get directions**.  Then, select the gear icon at the bottom right of the page to open the embed option.
+          Go to http://google.ca, add an address and select **Get directions**.  Or go to http://google.ca/maps/ and skip the previous step.
+
+          Then, select the gear icon at the bottom right of the page to open the embed option.
 
           ![](framework/img/workshop/google-maps.jpg)
           ![](framework/img/workshop/google-maps-embed.jpg)
-
-
       </script>
     </section>
 
@@ -238,6 +248,8 @@
 
         You can embed Instagram photos from your own account or another user. Go to the post URL or to `http://instagram.com/[username]` and expand the post. Click the more `[...]` button and select "Embed".
 
+        source: <!-- .element: class="footnote" --> http://instagram.com/p/0nYoXcAPRT/
+
         ![](framework/img/workshop/instagram-1.png)
         ![](framework/img/workshop/instagram-2.png)
       </script>
@@ -247,9 +259,9 @@
       <script type="text/template">
         ##Instagram feed
 
-        Embed an Instagram feed, like the one below, with [SnapWidget](http://snapwidget.com/#getstarted).  
+        You can create a feed using a user name or hashtag using this service, [SnapWidget](http://snapwidget.com/). 
 
-        You can create a feed using a user name or hashtag.
+        Go to "Get Started" to create and customize your widget!  This a free service but ads are displayed when you use one of the share options.
           
           <!-- SnapWidget -->
           <iframe src="http://snapwidget.com/in/?u=bGVhcm5pbmdjb2RlfGlufDEyNXwzfDN8fG5vfDV8bm9uZXxvblN0YXJ0fHllc3xubw==&ve=020415" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:390px; height:390px"></iframe>    
@@ -260,7 +272,7 @@
       <script type="text/template">
           ##Twitter Tweets
 
-          Embed a single Tweet by selecting the more option (`...`) to show the dropdown option from either the single tweet itself or from a timeline.
+          Embed a single Tweet by selecting the more option (`...`) to show the dropdown option from either the single tweet itself or from the timeline.
           
           source: <!-- .element: class="footnote" --> https://twitter.com/learningcode/status/578997210643206145
           
@@ -273,8 +285,9 @@
       <script type="text/template">
           ##Twitter Timelines
 
-          **Embedded Timeline** https://twitter.com/setting s/widgets/new<!-- .element: class="footnote" -->   
-          You can embed your own or another Twitter user&#39;s timeline. 
+          You can embed your own or another Twitter user&#39;s timeline by username.
+
+          Go here to create your widget: https://twitter.com/settings/widgets/new
 
           ![](framework/img/workshop/twitter-timeline.png)
       </script>
@@ -284,11 +297,13 @@
       <script type="text/template">
           ##Twitter Buttons
 
-          **Buttons** https://about.twitter.com/resources/buttons<!-- .element: class="footnote" -->
+          https://about.twitter.com/resources/buttons<!-- .element: class="footnote" -->
 
           ![](framework/img/workshop/twitter-buttons.png)
 
-          Customizing the Follow button wth data attributes: https://dev.twitter.com/web/follow-button
+          Customizing the Follow button wth `data attributes`. 
+
+          Documentation: <!-- .element: class="footnote" -->https://dev.twitter.com/web/follow-button
 
           Default follow button:
 
@@ -312,7 +327,7 @@
 
         Many popular web services provide the raw data through their APIs as well for developers to create apps and other projects that require more than the embedding options.
 
-        Often you can find links to the documentation from the service&#39;s web page.  For example, heree&#39;s last.fm and Instagram.
+        Often you can find links to the documentation from the service&#39;s web page.  For example, here&#39;s last.fm and Instagram.
 
         ![](framework/img/workshop/finding-apis-instagram.png)
 

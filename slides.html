@@ -112,7 +112,7 @@
           * static elements (e.g. navigation and header) could be separated into their own frames
           * isn&#39;t reloaded when the user browsed to new content in another frame.
 
-          However, using `frames` has many drawbacks and have since become obsolete. 
+          However, using `frames` has many drawbacks and have since become obsolete.
 
           These days, `iframes` (derived from frames) can used for embedding content from one HTML document inside another which is useful for adding content to your site from other sites like YouTube and Instragram.
 
@@ -124,46 +124,53 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-          ##Getting Social!
+        ##Finding Embed Code
 
-          Much of the generated embed code provided by these services is just HTML! Learning how to read the HTML allows you to be able to customize these embeds.
+        Many of these web services provide an embed code that you can simply copy and paste.   
+        Some services will also give you some customizing options in a visual interface. 
 
-          But first, let&#39;s go over where to find the basic generated embed code for many of your favorite social networsk such as YouTube, Vimeo, Google Maps, Twitter
+        Much of the generated embed code provided by these services is just HTML!  
+        So sometimes you can just edit or delete some of the generated coded to makde your own basic changes as well.  
 
+        To manipulate the raw data, most APIs will provide further documentation for how to access the data and will usually require JavaSript, PHP or other programming languages.
 
-          instagram no more iframe
+        <br>
+        First, let&#39;s go over where to find the basic generated embed code for many of your favorite social network such as [YouTube](slides.html#youtube), [Vimeo](slides.html#), [Google Maps](slides.html#), [Instagram](slides.html#) and [Twitter](slides.html#).
 
-          TODO
+        For the following examples, you can either add the content into your project files or use a blank test page located in today&#39;s downloaded files, located in [project/test.html](project/test.html).
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section id="youtube" class="slide" data-markdown>
       <script type="text/template">
-          ##YouTube
+        ##YouTube
 
-          Go to your favorite YouTube video, select **Share**, then **Embed** and copy the code listed below.
+        Go to your favorite YouTube video, select **Share**, then **Embed** and copy the code.
 
-          Source: <!-- .element: class="footnote" -->https://www.youtube.com/watch?v=vwji6HiXWCs
+        Source: <!-- .element: class="footnote" -->https://www.youtube.com/watch?v=vwji6HiXWCs
 
-          ![](framework/img/workshop/youtube.jpg)
+        ![](framework/img/workshop/youtube.jpg) <!-- .element: width="700" -->   
     </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-          ##YouTube: Customization
+        ##YouTube: Customizations
 
-          **Start the video at a specific time**
+        In the **Embed** tab, select "show more" to see additional options for video size, controls and other actions.
 
-          Select the **Share** option and check the checkbox at the time you want the video to start.  It will add it to then end of the url.  Replace the URL in the copied embed code.
+        ![](framework/img/workshop/youtube-options.png)
 
-          ![](framework/img/workshop/youtube-time.jpg)
+        Selecting different options will update your embed code.
 
-          <div class="example">
-          <p>&lt;iframe width="560" height="315" src="<span class="highlight">https://youtu.be/vwji6HiXWCs?t=13s</span>" frameborder="0" allowfullscreen>&lt;/iframe></p>
-          </div>
-
-          Change the size: HTML or CSS
+        #####Default
+        ```
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vwji6HiXWCs" frameborder="0" allowfullscreen></iframe>
+        ```
+        #####Customized
+        ```
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/vwji6HiXWCs?rel=0" frameborder="0" allowfullscreen></iframe>
+        ```
       </script>
     </section>
 

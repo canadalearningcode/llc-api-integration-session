@@ -35,11 +35,11 @@
         <span class="dark">Welcome to</span><br>
         <span>Ladies Learning Code!</span>
       </h1>
-      <div class="heading-bg connected">
+      <!-- <div class="heading-bg connected">
         <span class="dark">GET CONNECTED:</span>
         <span class="light">NETWORK: network name</span><br>
         <span class="light">PASSWORD: thepassword</span>
-      </div>
+      </div> -->
     </div>
 
     <div class="sponsor">
@@ -56,14 +56,14 @@
         <h1 class="heading-bg">
           <span>API<span style="text-transform:lowercase;">s</span>: Integrating Content From 3rd Party Sources</span>
         </h1>
-        <h2><span>with</span> Instructor Name</h2>
+        <!-- <h2><span>with</span> Instructor Name</h2>
 
         <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
         <ul>
           <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
           <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
           <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
-        </ul>
+        </ul> -->
       </div>
     </section>
 
@@ -137,7 +137,7 @@
         <br>
         First, let&#39;s go over where to find the basic generated embed code for many of your favorite social network such as [YouTube](slides.html#youtube), [Vimeo](slides.html#), [Google Maps](slides.html#), [Instagram](slides.html#) and [Twitter](slides.html#).
 
-        For the following examples, you can either add the content into your project files or use a blank test page located in today&#39;s downloaded files, located in [project/test.html](project/test.html).
+        For the following examples, you can either add the content into your project files or use a blank test page located in today&#39;s downloaded files, located in [test.html](test.html).
       </script>
     </section>
 
@@ -339,7 +339,95 @@
       </script>
     </section>
 
-   <!--  <section class="slide" data-markdown>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Google Maps API Tutorial
+
+        Most API services require that you register your app and/or get an API key.
+
+        Using an API key enables you to monitor your application's Maps API usage since many APIs have usage limits as well. (e.g. Google Maps allows 25,000 map loads per day)
+
+        The API key is also a unique identifier and a secret token for authentication, and will generally have a set of access rights on the API associated with it.
+
+        Using APIs usually requires a lot of going through documentation.  Let's create a simple map with a marker and add some customizations.
+        
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Get your API key
+
+        Create a project and get your API key here: https://console.developers.google.com/project. 
+
+        (You'll need a Google account.  If you don't have a Google account, you can use the LLC API key but only for today!!!) <!-- .element: class="footnote" -->
+
+        Follow all the steps below:
+
+        ![](framework/img/workshop/googlemapsapi-1.png)
+
+        ![](framework/img/workshop/googlemapsapi-2.png)
+
+        ![](framework/img/workshop/googlemapsapi-3.png)
+
+        ![](framework/img/workshop/googlemapsapi-4.png)
+
+        ![](framework/img/workshop/googlemapsapi-5.png)
+
+        ![](framework/img/workshop/googlemapsapi-6.png)
+
+        ![](framework/img/workshop/googlemapsapi-7.png)
+
+        ![](framework/img/workshop/googlemapsapi-8.png)
+        
+        Extra resource:<!-- .element: class="footnote" --> [Getting Started Docs](https://developers.google.com/maps/documentation/javascript/tutorial)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Create your map
+
+        For reference, this tutorial follows the code and documentation provided<!-- .element: class="footnote" --> [here](https://developers.google.com/maps/documentation/javascript/examples/marker-simple).
+
+        Back in Sublime, open [maps.html](maps.html) and let&#39;s look at the code.
+
+        
+        1. First, load the Google Maps API.  Find this line below (around line 9)  and add your API key.
+
+          ```
+          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY">
+          ```
+        1. Set the latitude and longitude of the address you want to focus on for your map in the line listed below (around line 15). Find the lat/long of an address here:  http://www.latlong.net  
+
+          ```
+          var myLatlng = new google.maps.LatLng(43.648285,-79.397899);
+          ```
+        1. There are several options you can add. There&#39;s a `zoom` option listed in the sample.  Use a number to set the default zoom for the map. The higher the number, the more zoomed in the map will be.
+          
+          ```
+          var mapOptions = {
+            zoom: 10,
+            center: myLatlng
+          }
+          ```
+        1. And finally, change the `title` of the marker (the text you see when you hover over it)
+
+        ```
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'Ladies Learning Code'
+        });
+        ```
+
+        <br>
+        **Bonus!** Check out the documentation for more map options here: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+      </script>
+    </section>
+
+    
+    <!--<section class="slide" data-markdown>
       ##Getting your site online
 
       You will need to register a domain name (www.mysite.com) and get hosting. Here are a couple domain & hosting suggestions:
@@ -363,17 +451,17 @@
       <h2>Thank you!</h2>
 
       <h2 class="heading-bg">
-        <span>Title of Workshop</span><br>
-        <span>Second line</span>
+        <span>API<span style="text-transform:lowercase;">s</span>: Integrating Content</span><br>
+        <span>From 3rd Party Sources</span>
       </h2>
-      <h3><span>with</span> Instructor Name</h3>
+      <!-- <h3><span>with</span> Instructor Name</h3>
 
        <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
       <ul>
         <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
         <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
         <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
-      </ul>
+      </ul> -->
 
       <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou&#39;s CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
     </section>

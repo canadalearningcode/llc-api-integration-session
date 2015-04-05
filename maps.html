@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    
+    <!-- Loads the Google Maps API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4mdFZC17srWu801iY6U7fh-xanBjaqQ8"></script>
+    <script type="text/javascript">
+
+      function initialize() {
+        // Set the latitude and longitude here
+        // Find the lat/long of an address here:  http://www.latlong.net
+        var myLatlng = new google.maps.LatLng(43.648285,-79.397899);
+
+        // Map options and customizations
+        var mapOptions = {
+          zoom: 18,
+          center: myLatlng
+        }
+
+        // Creates the map in the div element
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        // Adds the marker
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'Ladies Learning Code Headquarter'
+        });
+      }
+
+      // Runs the whole map script!
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    
+    <!-- For the map to display on a web page, we must reserve a spot for it. Commonly, we do this by creating an element. The id of "map-canvas" is used the script to inject the map here: document.getElementById('map-canvas'). If you change the id name here, you have to change it in the script to match. -->
+    <div id="map-canvas"></div>
+
+  </body>
+</html>

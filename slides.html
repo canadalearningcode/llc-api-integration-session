@@ -71,9 +71,7 @@
       <script type="text/template">
         ##What is an API?
 
-        In computer programming, an application programming interface (API) is a particular set of rules and specifications that software programs can follow to communicate with each other. 
-
-        It serves as an interface between different software programs and facilitates their interaction.
+        In computer programming, an application programming interface (API) is a particular set of rules and specifications that software programs can follow to communicate with each other.
 
         APIs provide a way to integrate data/content from a service into your website or app.
 
@@ -114,7 +112,7 @@
 
           However, using `frames` have many drawbacks and have since become obsolete.
 
-          These days, `iframes` (derived from frames) can used for embedding content from one HTML document inside another which is useful for adding content to your site from other sites like YouTube and Instragram.
+          These days, `iframes` (derived from frames) can still be used for embedding content from one HTML document inside another. This is a common technique for adding content to your site from other sites like YouTube and Instagram.
 
           The original site maintains ownership over the content and you will see the logo and styles of the original site. If the content is removed it won’t show on your website either.
 
@@ -135,9 +133,9 @@
         To manipulate the raw data, most APIs will provide further documentation for how to access the data and will usually require JavaSript, PHP or other programming languages.
 
         <br>
-        First, let&#39;s go over where to find the basic generated embed code for many of your favorite social network such as [YouTube](slides.html#youtube), [Vimeo](slides.html#), [Google Maps](slides.html#), [Instagram](slides.html#) and [Twitter](slides.html#).
+        First, let&#39;s go over where to find the basic generated embed code for many of your favorite social network such as [YouTube](slides.html#youtube), [Vimeo](slides.html#vimeo), [Google Maps](slides.html#googlemaps), [Instagram](slides.html#instagram) and [Twitter](slides.html#twitter).
 
-        For the following examples, you can either add the content into your project files or use a blank test page located in today&#39;s downloaded files, located in [test.html](test.html).
+        **For the following examples, you can either add the content into your project files or use a blank test page located in today&#39;s downloaded files, named [test.html](test.html).**
       </script>
     </section>
 
@@ -174,7 +172,7 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section id="vimeo" class="slide" data-markdown>
       <script type="text/template">
           ##Vimeo
 
@@ -207,7 +205,7 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section id="googlemaps" class="slide" data-markdown>
       <script type="text/template">
           ##Google Maps
           
@@ -242,7 +240,7 @@
       </script>
     </section>
 
-    <section class="slide side-by-side" data-markdown>
+    <section id="instagram" class="slide side-by-side" data-markdown>
       <script type="text/template">
         ##Instagram
 
@@ -268,7 +266,7 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section id="twitter" class="slide" data-markdown>
       <script type="text/template">
           ##Twitter Tweets
 
@@ -301,23 +299,29 @@
 
           ![](framework/img/workshop/twitter-buttons.png)
 
-          Customizing the Follow button wth `data attributes`. 
+          Customizing the Follow button wth `data attributes`, added to the `<a>` tag. 
 
-          Documentation: <!-- .element: class="footnote" -->https://dev.twitter.com/web/follow-button
+          
 
-          Default follow button:
+          Default follow button looks like this: ![](framework/img/workshop/twitter-btn-default.png)
 
-          ![](framework/img/workshop/twitter-btn-default.png)
-
-          Set `data-show-count="true"`:
-
+          Set `data-show-count="true"` to show the number of followers:
+          ```
+          <a href="https://twitter.com/learningcode" class="twitter-follow-button" data-show-count="true">Follow @learningcode</a>
+          ```
          
           ![](framework/img/workshop/twitter-btn-count.png)
 
 
-          Set `data-show-screen-name="false"`: 
+          Set `data-show-screen-name="false"` to only show the follow button: 
+
+          ```
+          <a href="https://twitter.com/learningcode" class="twitter-follow-button" data-show-screen-name="false">Follow @learningcode</a>
+          ```
 
           ![](framework/img/workshop/twitter-btn-noname.png)
+
+          More documentation here: <!-- .element: class="footnote" -->https://dev.twitter.com/web/follow-button
       </script>
     </section>
     
@@ -345,12 +349,11 @@
 
         Most API services require that you register your app and/or get an API key.
 
-        Using an API key enables you to monitor your application's Maps API usage since many APIs have usage limits as well. (e.g. Google Maps allows 25,000 map loads per day)
+        Using an API key enables you to monitor your application's API usage since many APIs have usage limits. (e.g. Google Maps allows 25,000 map loads per day)
 
         The API key is also a unique identifier and a secret token for authentication, and will generally have a set of access rights on the API associated with it.
 
-        Using APIs usually requires a lot of going through documentation.  Let's create a simple map with a marker and add some customizations.
-        
+        Using APIs usually requires a lot of going through documentation. Here's the [full documentation here](https://developers.google.com/maps/documentation/javascript/tutorial), but today, well experiment with just creating a simple map with a marker and add a couple customizations.
       </script>
     </section>
 
@@ -362,7 +365,7 @@
 
         (You'll need a Google account.  If you don't have a Google account, you can use the LLC API key `AIzaSyA50KNIZ3uQjt5CVquZsEgp1OwY1oJCZQY` but ONLY FOR TODAY!!!) <!-- .element: class="footnote" -->
 
-        Follow all the steps below:
+        Hit the link above and follow all the steps below to get your API key:
 
         ![](framework/img/workshop/googlemapsapi-1.png)
 
@@ -376,6 +379,7 @@
 
         ![](framework/img/workshop/googlemapsapi-6.png)
 
+        Just select **Create**, don&#39;t need to add any other info. 
         ![](framework/img/workshop/googlemapsapi-7.png)
 
         ![](framework/img/workshop/googlemapsapi-8.png)
@@ -403,7 +407,7 @@
           ```
           var myLatlng = new google.maps.LatLng(43.648285,-79.397899);
           ```
-        1. There are several options you can add. There&#39;s a `zoom` option listed in the sample.  Use a number to set the default zoom for the map. The higher the number, the more zoomed in the map will be.
+        1. Change the `zoom` option.  Use a number to set the default zoom for the map. The higher the number, the more zoomed in the map will be.
           
           ```
           var mapOptions = {
@@ -413,13 +417,13 @@
           ```
         1. And finally, change the `title` of the marker (the text you see when you hover over it)
 
-        ```
-        var marker = new google.maps.Marker({
+          ```
+          var marker = new google.maps.Marker({
             position: myLatlng,
             map: map,
             title: 'Ladies Learning Code'
-        });
-        ```
+          });
+          ```
 
         <br>
         **Bonus!** Check out the documentation for more map options here: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
